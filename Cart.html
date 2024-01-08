@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="cart.css">
+
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="bgimage">
+        <br>
+        <br>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <div class="logo"><img
+                                src="https://images.squarespace-cdn.com/content/v1/595d33df5016e19c5a035344/1586987601049-8PCLLRRC1VLJH4I502AR/Art+House+North+Logo-17.png"
+                                alt="img"
+                                style="max-width: 180px; max-height: 100px ;margin-left: 1vh; margin-top: -3vh; pointer-events: none; "></img>
+                        </div>
+                    </li>
+                    <div class="search">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <i onclick="openWebpage()" class="fa-solid fa-magnifying-glass" id="searchlogo"
+                            style="color: #faf8f8;"></i><br>
+                        <ul id="itemList" style="display: none;"></ul>
+                    </div>
+                    <a href="project 5.html">
+                        <li>Home</li>
+                    </a>
+                    <li>Services</li>
+                    <li><i class="fa-solid fa-cart-shopping" style="display: inline-block;"></i>
+                        <p style="display: inline-block; margin-left: 3px;" id="count">0</p>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <br><br>
+    </div>
+    <br><br></br>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head">
+                <p>My Cart</p>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container1">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a>about us</a></li>
+                        <li><a>our services</a></li>
+                        <li><a>privacy policy</a></li>
+                        <li><a>affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a>FAQ</a></li>
+                        <li><a>shipping</a></li>
+                        <li><a>returns</a></li>
+                        <li><a>order status</a></li>
+                        <li><a>payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a><i class="fab fa-facebook-f"></i></a>
+                        <a><i class="fab fa-twitter"></i></a>
+                        <a><i class="fab fa-instagram"></i></a>
+                        <a><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const product = [
+            {
+                id: 0,
+                image: "https://cdn.shopify.com/s/files/1/2349/9191/files/722C16F2-5AEB-41CB-924D-7D848347F780_480x480.jpg?v=1676335740",
+                title: 'The Garden',
+                price: 120,
+            },
+            {
+                id: 1,
+                image: 'https://i.pinimg.com/564x/13/20/88/132088d4edb378b04fbeaaa6e55c840d.jpg',
+                title: 'Up',
+                price: 60,
+            },
+            {
+                id: 2,
+                image: 'https://i.pinimg.com/564x/eb/3c/1b/eb3c1bc2e7d3d7982756df80766f9193.jpg',
+                title: 'The midnight bloom',
+                price: 230,
+            },
+            {
+                id: 3,
+                image: 'https://i.pinimg.com/564x/11/21/f7/1121f726d5f43fc0c3f3cc43a4316dab.jpg',
+                title: 'Ignorance',
+                price: 100,
+            },
+            {
+                id: 4,
+                image: 'https://i.pinimg.com/564x/7c/31/19/7c3119023c0f3b97d77584be1b0c632b.jpg',
+                title: 'Unachieved',
+                price: 100,
+            },
+            {
+                id: 5,
+                image: 'https://i.pinimg.com/564x/5a/d8/80/5ad8806d1b9825cf363de5fa34413150.jpg',
+                title: 'Deserted',
+                price: 100,
+            },
+            {
+                id: 6,
+                image: 'https://i.pinimg.com/564x/4a/51/6a/4a516ab351089319334a031fc80b90ae.jpg',
+                price: 100,
+            },
+            {
+                id: 7,
+                image: 'https://i.pinimg.com/564x/37/41/7f/37417fad3447ec6f0fb313349c04dba0.jpg',
+                title: 'Lavender Haze',
+                price: 100,
+            },
+            {
+                id: 8,
+                image: 'https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg',
+                title: 'Heaven',
+                price: 100,
+            }
+        ];
+        const categories = [...new Set(product.map((item) => { return item }))]
+        let i = 0;
+        document.getElementById('root').innerHTML = categories.map((item) => {
+            var { image, title, price } = item;
+            return (
+                `<div class='box'>
+           <div class='img-box'>
+               <img class='images' src=${image}></img>
+           </div>
+       <div class='bottom'>
+       <p>${title}</p>
+       <h2>$ ${price}.00</h2>` +
+                "<button onclick='addtocart(" + (i++) + ")'>Add to cart</button>" +
+                `</div>
+       </div>`
+            )
+        }).join('')
+
+        var cart = [];
+
+        function addtocart(a) {
+            cart.push({ ...categories[a] });
+            displaycart();
+        }
+        function delElement(a) {
+            cart.splice(a, 1);
+            displaycart();
+        }
+
+        function displaycart() {
+            let j = 0, total = 0;
+            document.getElementById("count").innerHTML = cart.length;
+            if (cart.length == 0) {
+                document.getElementById('cartItem').innerHTML = "Your cart is empty";
+                document.getElementById("total").innerHTML = "$ " + 0 + ".00";
+            }
+            else {
+                document.getElementById("cartItem").innerHTML = cart.map((items) => {
+                    var { image, title, price } = items;
+                    total = total + price;
+                    document.getElementById("total").innerHTML = "$ " + total + ".00";
+                    return (
+                        `<div class='cart-item'>
+               <div class='row-img'>
+                   <img class='rowimg' src=${image}>
+               </div>
+               <p style='font-size:12px;'>${title}</p>
+               <h2 style='font-size: 15px;'>$ ${price}.00</h2>` +
+                        "<i class='fa-solid fa-trash' style = 'color : #0a94ca;'onclick='delElement(" + (j++) + ")'></i></div>"
+                    );
+                }).join('');
+            }
+
+
+        }
+    </script>
+    <script src="search.js"></script>
+</body>
+
+</html>

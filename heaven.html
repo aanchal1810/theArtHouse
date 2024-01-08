@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“Heaven”</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bgimage">
+        <br>
+        <br>
+        <header>
+            <nav class="navbar">     
+                <ul>
+                    <li><div class="logo"><img src="https://images.squarespace-cdn.com/content/v1/595d33df5016e19c5a035344/1586987601049-8PCLLRRC1VLJH4I502AR/Art+House+North+Logo-17.png" alt="img" style="max-width: 180px; max-height: 100px ;margin-left: 1vh; margin-top: -3vh; pointer-events: none; "></img></div></li>
+                    <div class="search">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <i onclick="openWebpage()" class="fas fa-search" id="searchlogo" style="color: #faf8f8;"></i><br>
+                        <ul id="itemList" style="display: none;"></ul>
+                    </div>
+                    <li>Home</li>
+                    <li>Services</li>
+                    <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+    <br><br>
+    </div>
+    <div class="top image"></div>
+    <div class="product">
+        <div class="full-img" id="full">
+            <img src="https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg" id="fullImg">
+            <span onclick="closeImg()">x</span>
+        </div>
+        <div class="gallery">
+                <img src="https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg" width="120" height="150" onclick="openImg(this.src)">
+                <img src="https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg" width="120" height="150" onclick="openImg(this.src)">
+                <img src="https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg" width="120" height="150" onclick="openImg(this.src)">
+        </div>
+        <div class="img1">
+            <img id="garden" src="https://i.pinimg.com/564x/25/af/d6/25afd670aaa5e39306351cbed2ee1257.jpg">
+        </div>
+        <div class="title">
+            <span><h1>“Heaven”</h1></span>
+        </div>
+        <p>A vibrant still life of flowers. The bouquet is a riot of colors, with red, yellow, blue, and purple petals vying for attention.
+            The painting is rendered in a realistic style, with the artist paying close attention to detail. The individual petals of the flowers are clearly visible, as are the reflections of light on the vase and the canvas.
+            Overall, the painting is a celebration of beauty and life. This painting would be a lovely addition to any home.</p>
+        <p class="price">$24.99</p>
+        <button>+ Add to Cart</button>
+    </div> 
+</div>
+<footer class="footer">
+    <div class="container1">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a >about us</a></li>
+                    <li><a >our services</a></li>
+                    <li><a >privacy policy</a></li>
+                    <li><a >affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a >FAQ</a></li>
+                    <li><a >shipping</a></li>
+                    <li><a >returns</a></li>
+                    <li><a >order status</a></li>
+                    <li><a >payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" >
+                <div class="social">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a ><i class="fab fa-facebook-f"></i></a>
+                        <a ><i class="fab fa-twitter"></i></a>
+                        <a ><i class="fab fa-instagram"></i></a>
+                        <a ><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="search.js"></script>
+</body>
+</html>
+    <script>
+        var full = document.getElementById("full");
+        var fullImg = document.getElementById("fullImg");
+
+        function openImg(pic)
+        {
+            full.style.display = "flex";
+            fullImg.src = pic;
+        }
+
+        function closeImg()
+        {
+            full.style.display = "none";
+        }
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>

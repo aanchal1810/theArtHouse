@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.desktop {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .discount{
+    margin-top: 100px;
+    width: 100vw;
+    height: 100px;
+    background-color: #aec6cf;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    margin-top: 5vh;
+  }
+
+  .dis{
+    font-family: 'Raleway', Arial, sans-serif;
+    padding-top: 37px;
+  }
+
+.card {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 7vw;
+  margin-top: 10vh;
+  max-width: 350px;
+  max-height: 500px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 10vw;
+}
+.card * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.card::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  top: 100%;
+  content: '';
+  background-color: white;
+  opacity: 0.5;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+.card img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+.card figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card h3,
+.card h5 {
+  margin: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+.card h3 {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: #0568af;
+  color: #ffffff;
+  font-size: 30px;
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  margin-bottom: 5px;
+}
+.card h5 {
+  font-weight: normal;
+  background-color: #03c4b4;
+  font-size: 25px;
+  padding: 3px 10px;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.card a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.card:hover:before,
+.card.hover:before{
+  top: 10px;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.card:hover h3,
+.card.hover h3,
+.card:hover h5,
+.card.hover h5 {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover h3,
+.card.hover h3 {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.card:hover h5,
+.card.hover h5 {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
